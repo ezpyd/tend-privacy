@@ -72,7 +72,7 @@
 <body>
   <main>
     <h1>Privacy Policy — Tend</h1>
-    <p class="updated">Last updated: 13 October 2026</p>
+    <p class="updated">Last updated: 18 October 2026</p>
 
     <p>Tend (&ldquo;the app&rdquo;) is a calm weekly planner developed by Ezra Halevi
     (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy explains exactly what Tend does and
@@ -104,8 +104,10 @@
 
     <h2>Feedback you choose to send</h2>
     <p>Tend has an optional &ldquo;Send feedback&rdquo; screen. It does nothing unless you write a
-    message and tap Send. When you do, the following is sent to the developer through
-    <strong>Telegram</strong> (a third-party messaging service) so we can read and act on your feedback:</p>
+    message and tap Send. When you do, the following is sent to the developer: the app posts it to a
+    small relay we run on <strong>Cloudflare Workers</strong> (which passes it straight on and keeps no
+    copy) and the relay delivers it to us through <strong>Telegram</strong> (a third-party messaging
+    service), so we can read and act on your feedback:</p>
     <ul>
       <li>the message you wrote;</li>
       <li>your email address &mdash; <strong>only if you choose to enter one</strong> (so we can reply);</li>
@@ -134,10 +136,12 @@
     <h2>Permissions, briefly</h2>
     <ul>
       <li><strong>Calendar (read-only):</strong> to show your events beside your tasks (on-device only).</li>
-      <li><strong>Notifications:</strong> only if you turn on the optional daily overview; the reminder
-      is scheduled locally on your device.</li>
-      <li><strong>Alarms &amp; reminders / run at startup:</strong> so the optional daily overview arrives
-      on time and survives a restart.</li>
+      <li><strong>Notifications:</strong> only if you turn on the optional daily overview or set a
+      reminder on a task (15, 30, 45 or 60 minutes before its time). Both are off by default and are
+      scheduled locally on your device.</li>
+      <li><strong>Exact alarms / run at startup:</strong> so the daily overview and task reminders you set
+      arrive at the minute you chose and survive a restart. Alarms are local to your device; nothing
+      about them is sent anywhere.</li>
       <li><strong>Internet / network state:</strong> used solely to deliver feedback you choose to send.</li>
     </ul>
 
@@ -165,9 +169,10 @@
     <p><strong>If you are in the EU, EEA or UK (GDPR):</strong> we use feedback only to read it and,
     if you gave an email address, to reply. The legal basis is your consent, given when you tap Send,
     and our legitimate interest in fixing and improving the app. You can withdraw consent at any time
-    by asking us to delete your feedback. Feedback is delivered through Telegram, whose servers may be
-    outside your country; Telegram handles it under its own privacy policy. You also have the right to
-    complain to your local data protection authority.</p>
+    by asking us to delete your feedback. Feedback passes through a relay on Cloudflare Workers (no copy
+    kept) and is delivered through Telegram; both may process it on servers outside your country and
+    handle it under their own privacy policies. You also have the right to complain to your local data
+    protection authority.</p>
     <p><strong>If you are in California (CCPA/CPRA):</strong> the only categories we may collect are
     the ones listed under &ldquo;Feedback you choose to send&rdquo; (your message, an optional email
     address, and basic device and app details), and only when you send feedback. We do not sell or
